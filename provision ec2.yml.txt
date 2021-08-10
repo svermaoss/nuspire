@@ -1,16 +1,1 @@
-- name: CREATING AN EC2 INSTANCE
-  hosts: localhost
-  tasks:
-  - name: launching AWS instance using Ansible
-    ec2:
-     key_name: ec2_key
-     instance_type: t2.micro
-     image: ami-0c2b8ca1dad447f8a
-     region: us-east-1
-     wait: yes
-     group: default
-     count: 1
-     vpc_subnet_id: subnet-384ac619
-     assign_public_ip: yes
-     aws_access_key: AKIAR6INCTHT2QUYC2II
-     aws_secret_key: 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
+
