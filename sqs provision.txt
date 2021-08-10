@@ -1,0 +1,19 @@
+- name: CREATING A SQS QUEUE
+  hosts: localhost
+  tasks:
+  - name: Create SQS queue with redrive policy
+    sqs_queue:
+     name: my-queue
+     region: us-east-1
+     default_visibility_timeout: 120
+     message_retention_period: 86400
+     maximum_message_size: 1024
+     delivery_delay: 30
+     receive_message_wait_time: 20
+     policy: "{}"
+     redrive_policy:
+      maxReceiveCount: 5
+      deadLetterTargetArn: arn:aws:sqs:us-east-1:133708290535:my-queue
+     aws_access_key: AKIAR6INCTHT2QUYC2II
+     aws_secret_key: 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
+~
